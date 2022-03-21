@@ -3,10 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 html {
     font-family: Helvetica, Arial, sans-serif;
 }
+
 /*
 1.Out to In 
 2. Top to Bottom 
@@ -18,38 +18,88 @@ html {
 3.Color
 4.Style
  */
-
  #main {
 
  }
 
  #header {
-    height: 46px;
-    background-color: #000;
+     height: 46px;
+     background-color: #000;
  }
- 
+ #header .search-btn {
+    float: right;
+    padding: 0 21px;
+ }
+
+ #header .search-btn:hover {
+    cursor: pointer;
+    background-color: #f44336;
+ }
+
+ #header .search-icon {
+     color: #fff;
+     font-size: 20px;
+     display: inline-block;
+     line-height: 46px;
+ }
  #nav {
+     display: inline-block;
+ }
+
+ #nav , .subnav{
+     list-style-type: none;
+
+ }
+ #nav > li {
+    display: inline-block;
 
  }
  #nav li {
-     display: inline-block;
+    position: relative;
  }
- #nav .subnav {
-     display: none;
+ #nav > li > a {
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+     
  }
  #nav li a {
-     color: #fff;
      text-decoration: none;
      line-height: 46px;
      padding: 0 24px;
-     display: inline-block;
+     display: block;
  }
-
- #nav li:hover a {
+ #nav li:hover .subnav {
+     display: block;
+ }
+ #nav > li:hover > a,
+ #nav .subnav li:hover a {
      color: #000;
      background-color: #ccc;
  }
+
+ #nav .subnav {
+    min-width: 160px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0, 0, 0,0.3)
+ }
+
+ #nav .subnav a {
+     padding: 0 12px;
+     line-height: 38px;
+     color:#000;
+ }
+ #nav .nav-arrow-down{
+     font-size: 12px;
+ }
+
+
  #slider {
+     
 
  }
 
@@ -57,6 +107,8 @@ html {
 
  }
 
- #footer  {
+ #footer {
 
  }
+
+
