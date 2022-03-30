@@ -83,7 +83,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
 
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
 
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
 
                             </div>
                         </div>
@@ -123,9 +123,9 @@
 
         </div>
     </div>
-    <div class="modal">
-        <div class="modal-container">
-            <div class="modal-close">
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
                 <i class="ti-close"></i>
             </div>
             <header class="modal-header">
@@ -133,27 +133,50 @@
                 Tickets
             </header>
             <div class="modal-body">
-                <label for="" class="modal-label">
+                <label for="ticket-quantity" class="modal-label">
                     <i class="ti-shopping-cart"></i>
                     Tickets, $15 per person
                 </label>
-                <input type="text" class="modal-input" placeholder="How Many?">
+                <input id="ticket-quantity" type="text" class="modal-input" placeholder="How Many?">
 
-                <label for="" class="modal-label">
+                <label for="ticket-email" class="modal-label">
                     <i class="ti-user"></i>
                     Send To
                 </label>
-                <input type="text" class="modal-input" placeholder="Enter email...">
+                <input id="ticket-email" type="text" class="modal-input" placeholder="Enter email...">
                 <button id="buy-tickets">Pay
                     <i class="ti-check"></i>
                 </button>
             </div>
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p>
+            </footer>
         </div>
 
-        <footer class="modal-footer">
-            <p class="modal-help">Need <a href="">help</a></p>
-        </footer>
 
     </div>
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalClose = document.querySelector('.js-modal-close')
+        const modalContainer = document.querySelector('.js-modal-container')
+        function showBuyTickets(){
+            modal.classList.add('open')
+        }
+
+        function hideBuyTickets(){
+            modal.classList.remove('open')
+        }
+        function stopProContainar(event) {
+            event.stopPropagation()
+        }
+        for(const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+        modalClose.addEventListener('click', hideBuyTickets)
+        modal.addEventListener('click', hideBuyTickets)
+        modalContainer.addEventListener('click',stopProContainar)
+
+    </script>
 </body>
 </html>
