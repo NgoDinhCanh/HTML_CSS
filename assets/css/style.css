@@ -6,6 +6,7 @@
 
 html {
     font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 .clear {
@@ -15,6 +16,7 @@ html {
 .text-white {
     color: #fff !important;
 }
+
 .text-center {
     text-align: center !important;
 }
@@ -22,8 +24,8 @@ html {
 .row {
     margin-left: -8px;
     margin-right: -8px;
-
 }
+
 .row::after {
     content: "";
     display: block;
@@ -69,7 +71,6 @@ html {
     margin-top: 15px;
     border: none;
     cursor: pointer;
-
 }
 
 .btn:hover {
@@ -82,19 +83,20 @@ html {
 }
 
 
-
-
 /*
 1.Out to In 
 2. Top to Bottom 
 3. Tong quan den chi tiet 
  */
+
+
 /* 
 1. Location
 2.Size (Width,Height,..)
 3.Color
 4.Style
  */
+
 #main {}
 
 #header {
@@ -107,10 +109,25 @@ html {
     z-index: 1;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
+}
 
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
 }
 
 #header .search-btn:hover {
@@ -118,6 +135,7 @@ html {
     background-color: #f44336;
 }
 
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
@@ -132,12 +150,10 @@ html {
 #nav,
 .subnav {
     list-style-type: none;
-
 }
 
 #nav>li {
     display: inline-block;
-
 }
 
 #nav li {
@@ -148,7 +164,6 @@ html {
     color: #fff;
     display: block;
     text-transform: uppercase;
-
 }
 
 #nav li a {
@@ -188,7 +203,6 @@ html {
     font-size: 12px;
 }
 
-
 #slider {
     margin-top: 46px;
     padding-top: 50%;
@@ -209,13 +223,11 @@ html {
 #slider .text-heading {
     font-weight: 500;
     font-size: 24px;
-
 }
 
 #slider .text-descrepsion {
     font-size: 15px;
     margin-top: 25px;
-
 }
 
 #content {
@@ -224,9 +236,12 @@ html {
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -234,7 +249,6 @@ html {
     text-align: center;
     font-weight: 500;
     letter-spacing: 4px;
-
 }
 
 #content .section-sub-heading {
@@ -243,7 +257,6 @@ html {
     text-align: center;
     font-style: italic;
     opacity: 0.6;
-
 }
 
 #content .about-text {
@@ -323,7 +336,6 @@ html {
     background-color: #fff;
     padding: 14px;
     font-size: 15px;
-
 }
 
 .place-heading {
@@ -334,16 +346,12 @@ html {
 .place-time {
     margin-top: 15px;
     color: #757575;
-
-
 }
 
 .place-desc {
     margin-top: 15px;
     line-height: 1.4;
-
 }
-
 
 .modal {
     position: fixed;
@@ -378,7 +386,6 @@ html {
     justify-content: center;
     font-size: 30px;
     color: #fff;
-
 }
 
 .modal-heading-icon {
@@ -408,7 +415,6 @@ html {
     display: block;
     font-style: 15px;
     margin-bottom: 15px;
-
 }
 
 .ti-shopping-cart {
@@ -448,7 +454,9 @@ html {
     color: #2196F3;
 }
 
+
 /* Contact Form */
+
 .contact-content {
     margin-top: 48px;
 }
@@ -476,36 +484,40 @@ html {
 .map-section img {
     width: 100%;
 }
+
 #footer {
     padding: 64px 16px;
     text-align: center;
 }
+
 #footer .socials-list {
     font-size: 24px;
 }
+
 #footer .socials-list a {
     text-decoration: none;
-    color: rgb(0, 0, 0,0.6);
-}
-#footer .copy-rigth a:hover,
-#footer .socials-list a:hover {
-    color: rgb(0, 0, 0,0.4);
-}
-#footer .copy-rigth {
-    margin-top: 15px;
-    color: rgb(0, 0, 0,0.4);
-}
-#footer .copy-rigth a {
-    color: rgb(0, 0, 0,0.4);
+    color: rgb(0, 0, 0, 0.6);
 }
 
+#footer .copy-rigth a:hover,
+#footer .socials-list a:hover {
+    color: rgb(0, 0, 0, 0.4);
+}
+
+#footer .copy-rigth {
+    margin-top: 15px;
+    color: rgb(0, 0, 0, 0.4);
+}
+
+#footer .copy-rigth a {
+    color: rgb(0, 0, 0, 0.4);
+}
 
 @keyframes modalFaceIn {
     from {
         opacity: 0;
         transform: translateY(-150px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
