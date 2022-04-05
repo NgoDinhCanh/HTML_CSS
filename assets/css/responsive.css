@@ -1,18 +1,36 @@
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .pc {}
+}
+
+
+/* Tablet and Mobile */
+
+@media (min-width: 63.9375em) {
+    .btn {
+        padding: 15px 16px
+    }
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+    .contact-form .form-control {
+        padding: 15px;
+        font-size: 16px;
+    }
 }
 
 
 /* Tablet */
 
-@media (min-width: 740px) {
-    .tablet {}
+@media (min-width: 46.25em) and (min-width: 63.9375em) {
+    .contact-info {
+        line-height: 2;
+    }
 }
 
 
 /* Mobile */
 
-@media (max-width: 740px) {
+@media (max-width: 46.1875em) {
     #header {
         overflow: hidden;
     }
@@ -41,5 +59,24 @@
     }
     #nav>li:first-child {
         display: inline-block;
+    }
+    #content .member-img {
+        width: 60%;
+    }
+    .s-col-full {
+        width: 100%;
+    }
+    .contact-form {
+        margin-top: 16px;
+    }
+    .s-mt-8 {
+        margin-top: 8px !important;
+    }
+    .s-full-width {
+        width: 100% !important;
+    }
+    .contact-info {
+        margin-bottom: 16px;
+        line-height: 1.8;
     }
 }
